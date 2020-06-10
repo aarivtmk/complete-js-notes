@@ -6,15 +6,12 @@
 // SYMBOL NAMES - L73
 // type coercion - L92
 // variable mutation - L102
-
 // primitives in details - numbers, strings, empty strings,undefined,null,boolean - L115
-
-// control statements & operators - L105
-// loops
-// variables in detail - primitives
-// difference between primitives
-// == and ===
-// arrays
+// operators-L191 
+// control statements-L226
+// loops L258
+// arrays L309
+// JUMPING STATEMENTS L355
 // objects
 // initializing objects
 // objects and functions
@@ -85,11 +82,14 @@ var total = firstNumber / secondNumber;
 // @ - at the rate
 // $ - dollar
 //     & - ampersand
+//  && - logical and
+//  || - logical or
 // ! - not
 // / - forward slash
 // \ - backward slash
 // = - equal to
 // % - mod
+// `` - backticks
 
 
 // TYPE COERCION - CHANGING NUMBERS AND BOOLEN TO INTEGERS
@@ -186,14 +186,194 @@ else {
 //     console.log('odd no');
 // }
 
+
+// OPERATORS
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+
+// 
+/*
+ASSIGNEMENT OPERATORS
+=,+=,-=
+
+x = 2;
+x = x+2;  // x+=2;
+x= x-2; or x-=2;
+x=x*2; or x*=2
+x/=2; or x=x/2;
+
+
+COMPARISION OPERATORS
+==,===,!=,>,<,>=,<=
+2=="2"
+2>3
+
+ARITHMETIC OPERATORS
++,-,*,/,%,++,--,**(power)
+
+++
+x =  2
+x = x+1 or x++
+-- = x-- or x = x-1
+
+
+LOGICAL OPERATORS
+//  && - logical and
+//  || - logical or
+
+
+*/
+// control statements
 var fn = 4;
 var sn = 8;
 
-if (fn > sn) {
-    console.log(fn + ' is greater than ' + sn);
-}
-else {
-    console.log(sn + ' is greater than ' + fn);
+// if (fn > sn) {
+//     console.log(fn + ' is greater than ' + sn);
+// }
+// else {
+//     console.log(sn + ' is greater than ' + fn);
+// }
+
+// elseif ladder
+
+// find greatest number among three numbers
+
+var tn = 20;
+var frn = 30;
+
+// if (fn > sn && fn > tn && fn > frn) {
+//     console.log(fn + ' is greter than ' + sn + ' and ' + tn + ' and ' + frn);
+// }
+// else if (sn > fn && sn > tn && sn > frn) {
+//     console.log(sn + ' is greter than ' + fn + ' and ' + tn + ' and ' + frn);
+// }
+
+// else if (tn > fn && tn > sn && tn > frn) {
+//     console.log(tn + ' is greter than ' + fn + ' and ' + sn + ' and ' + frn);
+
+// }
+// else {
+//     console.log(frn + ' is greter than ' + fn + ' and ' + sn + ' and ' + tn);
+// }
+
+
+// LOOPS - repeating the same task
+
+// console.log(1);
+// console.log(2);
+// console.log(3);
+// console.log(4);
+// console.log(5);
+
+
+// while loop
+
+// var number = 1;
+// while (number < 6) {
+//     console.log(number);
+//     number++;
+// }
+
+// for (var fn = 6; fn <= 10; fn++) {
+//     console.log(fn);
+// }
+
+// print all even numbers < 100
+
+// for (var i = 0; i < 101; i++) {
+//     if (i % 2 === 0) {
+//         console.log('even number', i);
+
+//     }
+//     else {
+//         console.log('odd number', i);
+
+//     }
+// }
+
+
+// var number = 0;
+// while (number <= 100) {
+
+//     if (number % 2 === 0) {
+//         console.log('even number' + number);
+
+//     }
+//     else {
+//         console.log('odd number', +number);
+
+//     }
+
+//     number++;
+// }
+
+
+// ARRAY - list of elements
+
+// var name_of_student1 = 'Ramesh';
+// var name_of_student2 = 'Sandeep';
+// var name_of_student3 = 'Shrikanth';
+// var name_of_student4 = 'Rahul';
+
+// console.log('students list: ' + name_of_student1 + ' ' + name_of_student2);
+
+
+var whatsapp_group = ['Ramesh', 'Sandeep', 'Shrikanth', 'Rahul', 'Ramesh', 'Sandeep', 'Shrikanth', 'Rahul', 'Ramesh', 'Sandeep', 'Shrikanth', 'Rahul', 'Ramesh', 'Sandeep', 'Shrikanth', 'Rahul', 'Ramesh', 'Sandeep', 'Shrikanth', 'Rahul', 'Ramesh', 'Sandeep', 'Shrikanth', 'Rahul', 'Ramesh', 'Sandeep', 'Shrikanth', 'Rahul', 'Ramesh', 'Sandeep', 'Shrikanth', 'Rahul'];
+
+
+// console.log('Students list : ' + whatsapp_group);
+// console.log(whatsapp_group[1]);
+
+// length method
+
+console.log('no of people in this group are:' + whatsapp_group.length);
+
+for (var index = 0; index < whatsapp_group.length; index++) {
+    // console.log(whatsapp_group[index]);
+
 }
 
 
+students_list = ['bill', 'steve', 'woz'];
+students_list.push('jack');
+console.log(students_list);
+
+students_list.pop();
+students_list.pop();
+console.log(students_list);
+
+
+
+// find odd numbers less than 10
+
+for (var i = 1; i < 10; i++) {
+    if (i % 2 === 1) {
+        // console.log('odd number : ', i);
+
+    }
+}
+
+// JUMPING STATEMENTS - BREAK AND CONTINUE
+
+// eg print 1 to 10 numers, if you get 5 stop printing
+
+for (var i = 1; i < 11; i++) {
+    if (i === 5) {
+        break;
+    }
+    else {
+        console.log(i);
+
+    }
+}
+
+// CONTINUE -
+
+for (var i = 1; i < 11; i++) {
+    if (i === 5) {
+        continue;
+    }
+    else {
+        console.log(i);
+
+    }
+}
