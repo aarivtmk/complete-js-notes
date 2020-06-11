@@ -12,9 +12,9 @@
 // loops L258
 // arrays L309
 // JUMPING STATEMENTS L355
-// objects
+// objects - L381
+// functions -L416
 // initializing objects
-// objects and functions
 // object oriented programming
 // function constructors
 // prototypes
@@ -356,24 +356,133 @@ for (var i = 1; i < 10; i++) {
 
 // eg print 1 to 10 numers, if you get 5 stop printing
 
-for (var i = 1; i < 11; i++) {
-    if (i === 5) {
-        break;
-    }
-    else {
-        console.log(i);
+// for (var i = 1; i < 11; i++) {
+//     if (i === 5) {
+//         break;
+//     }
+//     else {
+//         console.log(i);
 
-    }
-}
+//     }
+// }
 
 // CONTINUE -
 
-for (var i = 1; i < 11; i++) {
-    if (i === 5) {
-        continue;
-    }
-    else {
-        console.log(i);
+// for (var i = 1; i < 11; i++) {
+//     if (i === 5) {
+//         continue;
+//     }
+//     else {
+//         console.log(i);
 
-    }
+//     }
+// }
+
+// OBJECTS - 
+
+// var objectname = {
+//     key : value,
+//     key : value,
+// }
+
+var student1_name = 'Ramesh';
+var student1_no = 101;
+var student1_class = 2;
+
+// Array
+
+var student_details = ['Ramesh', 101, 2];
+
+// object
+
+var student1_details = {
+    'name': 'Ramesh',
+    'id': 101,
+    'classroom': 2
+};
+
+var rahul123 = {
+    'username': 'Rahul',
+    'age': 22,
+    'phone': 546546546545
+};
+
+
+
+console.log(student1_details);
+
+console.log(rahul123);
+
+// FUNCTION -A PIECE OF CODE WHERE WE CAN USE IT MULTIPLE TIMES INSTEAD OF REPEATING THE CODE
+
+var a = 5;
+var b = 6;
+var c = a + b;
+console.log('sum is : ', c);
+
+var d = 8;
+var e = 8;
+console.log('sum is :', d + e);
+
+
+function addition(firstNo, secondNo) {
+    var sum = firstNo + secondNo;
+    console.log('value of sum is :', sum);
 }
+
+function multiplication(fn, sn) {
+    var multiply = fn * sn;
+    console.log('value of multiplication is : ', multiply);
+
+}
+
+function subtraction(fn, sn) {
+    var sub = fn - sn;
+    console.log('value of subtraction is : ', sub);
+
+}
+
+// parseInt - converting string to integer
+// eg: '23' - 23
+// eg : 'a' - Not possible
+
+// var a = parseInt(prompt('Enter first number :'));
+// var b = parseInt(prompt('Enter second number :'));
+// addition(a, b);
+// multiplication(a, b);
+// subtraction(a, b);
+
+
+// four types of functions
+// 1. function with no return type
+
+function addition(fn, sn) {
+    console.log('sum is : ', fn + sn);
+
+}
+
+addition(3, 5);
+
+// 2. function with return type
+
+function multiplication(fn, sn) {
+    return fn * sn;
+}
+
+console.log(multiplication(4, 5));
+
+
+
+
+
+
+
+
+// function balance_enquiry(name) {
+//     console.log('hi ' + name + ' welcome to SBI');
+//     return 20000;
+
+// }
+
+// var remain_balance = balance_enquiry('Ramesh');
+// console.log(remain_balance);
