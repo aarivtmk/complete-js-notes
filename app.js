@@ -14,8 +14,9 @@
 // JUMPING STATEMENTS L355
 // objects - L381
 // functions -L416
-// initializing objects
-// object oriented programming
+// initializing objects - L529
+// objects and methods - L541
+// object oriented programming - L560
 // function constructors
 // prototypes
 // inheritance
@@ -92,7 +93,7 @@ var total = firstNumber / secondNumber;
 // `` - backticks
 
 
-// TYPE COERCION - CHANGING NUMBERS AND BOOLEN TO INTEGERS
+// TYPE COERCION - CHANGING NUMBERS AND BOOLEN TO STRING
 // name = 'steve';
 // age = 60;
 // age = '60';
@@ -486,3 +487,97 @@ console.log(multiplication(4, 5));
 
 // var remain_balance = balance_enquiry('Ramesh');
 // console.log(remain_balance);
+
+// console.log(5 % 2);
+
+
+
+// console.log('welcome to sbi');
+// function bal_enq() {
+//     choice = prompt('DO you want a receipt?');
+//     if (choice === 'y') {
+//         receipt = 2000;
+//         return receipt;
+//     }
+//     else {
+//         console.log('your balance is ', 2000);
+//         console.log('Thank you for using SBI');
+
+
+//     }
+// }
+
+// console.log(bal_enq());
+
+// whenever you return something from a function, we need to write the function call with log
+
+// INITIALIZING OBJECTS
+
+var student1_details = {
+    'name': 'Ramesh',
+    'id': 101,
+    'classroom': 2
+};
+
+// accessing objects
+console.log(student1_details['name']);
+student1_details['name'] = 'Ramesh Kumar';
+console.log(student1_details['name']);
+console.log(student1_details.classroom);
+student1_details.classroom = 'two';
+console.log(student1_details.classroom);
+console.log(typeof (student1_details));
+// new keyword creates memory for the newly created object
+
+
+var student2_details = new Object();
+student2_details.age = 23;
+student2_details.name = 'mohammed';
+console.log(student2_details['name']);
+
+console.log(typeof (student2_details));
+
+
+
+// objects and functions/methods
+
+
+var student2_details = {
+    'name': 'Ramesh',
+    'id': 101,
+    'classroom': 2,
+    'dob': 1998,
+    'calculateAge': function () {
+        return 2020 - this.dob;
+
+    }
+
+};
+
+var age = student2_details.calculateAge();
+console.log(age);
+
+
+// OBJECT ORIENTED PROGRAMMING
+
+var jimmy = {
+    age: 10,
+    color: 'black',
+    breed: 'lab',
+}
+
+var tomy = {
+    age: 3,
+    color: 'brown',
+    breed: 'gs',
+}
+
+var gani = {
+    age: 10,
+    color: 'white',
+    breed: 'lab',
+}
+
+
+
+

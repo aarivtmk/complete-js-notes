@@ -34,5 +34,15 @@ for (var i = 0; i < usernames.length; i++) {
 }
 
 
+// MDOULUS
 
+function mod(fn, sn) { //fn=8,sn=4
+    var q = fn / sn;
+    q = parseInt(q);
+    var mod = fn - (sn * q);
+    console.log(mod);
+
+}
+
+mod(10, 3);
 
