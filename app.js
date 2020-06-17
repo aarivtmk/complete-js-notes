@@ -17,8 +17,8 @@
 // initializing objects - L529
 // objects and methods - L541
 // object oriented programming - L560
-// function constructors
-// prototypes
+// function constructors - L603
+// prototypes - 659
 // inheritance
 // functions in details - passing functions
 // IIFE's - immediately invoked functions
@@ -560,23 +560,122 @@ console.log(age);
 
 // OBJECT ORIENTED PROGRAMMING
 
-var jimmy = {
-    age: 10,
-    color: 'black',
-    breed: 'lab',
+// var jimmy = {
+//     dob: 2010,
+//     color: 'black',
+//     breed: 'lab',
+//     age: function () {
+//         console.log(2020 - this.dob);
+
+//     }
+// }
+
+// jimmy.age();
+
+
+
+
+
+// var tomy = {
+//     dob: 2017,
+//     color: 'brown',
+//     breed: 'gs',
+//     age: function () {
+//         console.log(2020 - this.dob);
+
+//     }
+// }
+
+// var gani = {
+//     dob: 2015,
+//     color: 'white',
+//     breed: 'lab',
+//     age: function () {
+//         console.log(2020 - this.dob);
+
+//     }
+// }
+
+// gani.age();
+
+
+
+// OBJECT ORIENTED PROGRAMMIG APPROACH
+// 1.CREATE A BLUEPRINT using Function Constructor (constructor is a special which will be invoked directly)
+// 2. INITIALIZE OBJECT
+
+var Dog = function (dob, color, breed) {
+    this.dateob = dob;
+    this.dcolor = color;
+    this.dbreed = breed;
 }
 
-var tomy = {
-    age: 3,
-    color: 'brown',
-    breed: 'gs',
-}
+var jimmy = new Dog(2015, 'black', 'lab');
+var tomy = new Dog(2017, 'white', 'german shephard');
 
-var gani = {
-    age: 10,
-    color: 'white',
-    breed: 'lab',
+
+// console.log('dob of jimmy is:', jimmy.dateob);
+// console.log('color of tomy is', tomy.dcolor);
+
+// employees example
+// var sandeep = {
+//     fullname: 'sandeep bobba',
+//     yearOfBirth: 1995,
+//     job: 'teacher',
+//     // calculateAge: function () {
+//     //     // console.log('age is', 2020 - this.yearOfBirth);
+//     //     // return 2020 - this.yearOfBirth;
+//     //     this.age = 2020 - this.yearOfBirth;
+
+//     // },
+// }
+
+// var shrikanth = {
+//     fullname: 'shrikanth bobba',
+//     yearOfBirth: 1997,
+//     job: 'Software Engineer',
+// calculateAge: function () {
+//     // console.log('age is', 2020 - this.yearOfBirth);
+//     // return 2020 - this.yearOfBirth;
+//     this.age = 2020 - this.yearOfBirth;
+
+// },
+// }
+
+
+
+// console.log(sandeep);
+// sandeep.calculateAge();
+// console.log('age is', sandeep.age);
+
+
+var Employee = function (fullname, yearOfBirth, job) {
+    this.fullname = fullname;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+    // this.company = 'Google';
+
 }
+// PROTOTYPES
+Employee.prototype.calculateAge = function () {
+    console.log(2020 - this.yearOfBirth);
+}
+Employee.prototype.company = 'Google';
+
+
+
+
+var sandeep = new Employee('Sandeep Bobba', 1995, 'teacher');
+var ramesh = new Employee('Ramesh Bobba', 1995, 'Freelancer');
+var shrikanth = new Employee('Shrikanth Bobba', 1995, 'Scientist');
+var rahul = new Employee('Rahul Bobba', 1998, 'Software Enginner');
+
+shrikanth.calculateAge();
+console.log(rahul.company);
+
+
+
+
 
 
 
