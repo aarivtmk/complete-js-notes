@@ -23,8 +23,8 @@
 //  copying objects L690
 // passing variables to the functions L706
 // // passing object to the functions as arguments - L718
-// passing function to the function as arguments-L739
-// // functions in details - passing functions
+// passing function to the function as arguments-L742
+
 // // IIFE's - immediately invoked functions
 // // closures
 
@@ -608,18 +608,21 @@
 // // 1.CREATE A BLUEPRINT using Function Constructor (constructor is a special which will be invoked directly)
 // // 2. INITIALIZE OBJECT
 
-// var Dog = function (dob, color, breed) {
-//     this.dateob = dob;
-//     this.dcolor = color;
-//     this.dbreed = breed;
-// }
+var Dog = function (dob, color, breed) {
+    this.dateob = dob;
+    this.dcolor = color;
+    this.dbreed = breed;
+}
 
-// var jimmy = new Dog(2015, 'black', 'lab');
-// var tomy = new Dog(2017, 'white', 'german shephard');
+var jimmy = new Dog(2015, 'black', 'lab');
+var tomy = new Dog(2017, 'white', 'german shephard');
+jimmy.dcolor = 'white';
+console.log(jimmy);
 
 
-// // console.log('dob of jimmy is:', jimmy.dateob);
-// // console.log('color of tomy is', tomy.dcolor);
+
+// console.log('dob of jimmy is:', jimmy.dateob);
+// console.log('color of tomy is', tomy.dcolor);
 
 // // employees example
 // // var sandeep = {
@@ -692,51 +695,76 @@
 
 // // coplying objects - referencing
 
-var a = {
-    name: 'steve',
-    age: 25
-};
+// var a = {
+//     name: 'steve',
+//     age: 25
+// };
 
-var b = a;
-var c = b;
-c.name = 'billgates'
+// var b = a;
+// var c = b;
+// c.name = 'billgates'
 // console.log(a);
 // console.log(b);
 // console.log(c);
 
 
-// passing variables to the functions
+// passing variables to the functions as arguments
 
-function addition(a, b) {
-    console.log(a + b);
+// function addition(a, b) {
+//     console.log(a + b);
 
-}
+// }
 
-c = 2;
-d = 3;
-addition(c, d)
+// c = 2;
+// d = 3;
+// addition(c, d)
 
-// passing object to the functions as arguments
-var student1 = {
-    name: 'steve',
-    city: 'USA'
-}
+// // passing object to the functions as arguments
+// var student1 = {
+//     name: 'steve',
+//     city: 'USA'
+// }
 
-function change_Student_Details(student_object) {
-    console.log('details before chnaging', student_object);
-
-
-    student_object.name = 'Jack';
-    console.log('details after change', student_object);
+// function change_Student_Details(student_object) {
+//     console.log('details before chnaging', student_object);
 
 
-}
+//     student_object.name = 'Jack';
+//     console.log('details after change', student_object);
 
 
-change_Student_Details(student1);
-console.log(student1);
+// }
+
+
+// change_Student_Details(student1);
+// console.log(student1);
 
 // passing function to the function as arguments
+// program : based on yearofbirh
+
+var years = [1998, 2005, 1997, 1960];
+
+function calculate(yearsArray, myfun) {
+    var result = [];
+    for (var i = 0; i < yearsArray.length; i++) {
+        result.push(myfun(yearsArray[i]));
+    }
+    return result;
+
+}
+
+function calculateAge(element) {
+    return 2020 - element;
+}
+
+var ages = calculate(years, calculateAge);
+console.log(ages);
+
+
+
+
+
+
 
 
 

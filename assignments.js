@@ -120,8 +120,11 @@ Customer.prototype.withDrawl = function (with_amount) {
 
 
 ramesh = new Customer('Ramesh Boppan', 123, 20000);
+ramesh.fullname = 'Shrikanth'
 ramesh.deposit(30000);
 
 ramesh.withDrawl(10000);
+console.log(ramesh);
+
 
 
