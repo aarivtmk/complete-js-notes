@@ -23,7 +23,9 @@
 //  copying objects L690
 // passing variables to the functions L706
 // // passing object to the functions as arguments - L718
-// passing function to the function as arguments-L742
+// FIRST CLASS FUNCTIONS - L743
+// passing function as arguments to another function-L745
+// functions returning functions - L766
 
 // // IIFE's - immediately invoked functions
 // // closures
@@ -517,11 +519,11 @@
 
 // // INITIALIZING OBJECTS
 
-// var student1_details = {
-//     'name': 'Ramesh',
-//     'id': 101,
-//     'classroom': 2
-// };
+var student1_details = {
+    'name': 'Ramesh',
+    'id': 101,
+    'classroom': 2
+};
 
 // // accessing objects
 // console.log(student1_details['name']);
@@ -739,7 +741,9 @@ console.log(jimmy);
 // change_Student_Details(student1);
 // console.log(student1);
 
-// passing function to the function as arguments
+
+// FIRST CLASS FUNCTIONS
+// passing function as arguments to another function
 // program : based on yearofbirh
 
 var years = [1998, 2005, 1997, 1960];
@@ -757,9 +761,56 @@ function calculateAge(element) {
     return 2020 - element;
 }
 
-var ages = calculate(years, calculateAge);
-console.log(ages);
+console.log(calculate(years, calculateAge));
 
+// functions returning functions
+// interview program - ask questions based on the job.
+
+function interviewQuestion(job) {
+    if (job === 'designer') {
+        return function (name) {
+            console.log('hey ' + name + ', Define Design');
+
+        }
+    }
+
+    else if (job === 'teacher') {
+        return function (name) {
+            console.log('hey ' + name + ' , Why do you want to teach?');
+
+        }
+    }
+
+    else if (job === 'software engineer') {
+        return function (name) {
+            console.log('hey ' + name + ' , How do you define primitives?');
+
+        }
+    }
+    else {
+        return function (name) {
+            console.log('hey ' + name + ', what do you do for living?');
+
+        }
+    }
+}
+
+
+var teacherQuestion = interviewQuestion('teacher');
+
+teacherQuestion('Rahul');
+
+
+
+function addition(a, b) {
+    return a + b;
+}
+
+
+console.log(addition(2, 5));
+
+// var sum = addition(8, 8);
+// console.log(sum);
 
 
 
