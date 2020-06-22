@@ -26,9 +26,9 @@
 // FIRST CLASS FUNCTIONS - L743
 // passing function as arguments to another function-L745
 // functions returning functions - L766
-
-// // IIFE's - immediately invoked functions
-// // closures
+// IIFE - immediately invoked function expression L-816
+// // closures L-828
+// METHOD BORROWING : CALL METHOD AND BIND METHOD L-868
 
 
 
@@ -807,10 +807,128 @@ function addition(a, b) {
 }
 
 
-console.log(addition(2, 5));
+// console.log(addition(2, 5));
 
 // var sum = addition(8, 8);
 // console.log(sum);
+
+
+
+// IIFE - immediately invoked function expression 
+// iife has no need to call explicitly. it will call itself
+// why: data privacy
+
+(function () {
+    var name = 'Shrikanth';
+    console.log('inside', name);
+
+})();
+
+console.log('hi my name is outside', name);
+
+// closures
+// es5 : scope of es6 is function scoped
+
+function es5scope() {
+    var a = 10;
+    console.log('inside', a);
+}
+// console.log('outside', a);
+es5scope();
+
+// CLOSURE DEF
+
+// inner function will always  have access to variables and parameters of the outer function evern after 
+// the outer function returned.
+
+// find years remain to retirement
+
+// outerfunction : retirement
+// outerfunction parameter : retirementAge
+
+// innerfunction : anonymous function
+
+function retirement(retirementAge) {
+    var s = 'years remain to retire';
+    return function (yearOfBirth) {
+        var age = 2020 - yearOfBirth;
+        console.log((retirementAge - age) + s);
+
+    }
+}
+
+var retirementIndian = retirement(60);
+retirementIndian(1980);
+
+
+var retirementAmerican = retirement(70);
+retirementAmerican(1995);
+
+
+// METHOD BORROWING : CALL METHOD AND BIND METHOD
+
+// CALL METHOD : IT DIRECTLY CALLS METHOD 
+// BIND METHOD : IT COPIES THE METHOD TO A VARIABLE
+
+// program: shrikanth and ramesh are invited for their school celebration to give guidance to the school kids and college students
+
+var shrikanth = {
+    name: 'Shrikanth Vattikutti',
+    age: 22,
+    job: 'Software Engineer',
+
+    presentation: function (studenttype, timeOftheDay) {
+        if (studenttype === 'kids') {
+            console.log('Hi kids, Good' + timeOftheDay + ', My name is ' + this.name);
+        }
+        else {
+            console.log('Hi Students, Good' + timeOftheDay + ', I am ' + this.name + ' and I am a' + this.job);
+
+        }
+    }
+
+
+}
+
+var Ramesh = {
+    name: 'Ramesh Singh',
+    age: 25,
+    job: 'Data Scientist',
+}
+
+var Rahul = {
+    name: 'Rahul Panda',
+    age: 22,
+    job: 'Systems Engineer'
+}
+
+
+
+shrikanth.presentation('kids', 'Morning');
+
+// ramesh is borrowing presentation from shrikanth using call method
+
+shrikanth.presentation.call(Ramesh, 'students', 'Evening');
+
+shrikanth.presentation.call(Rahul, 'kids', 'Afternoon');
+
+
+// bind method :
+
+// with bind we cannot call method directly so we have to copy
+//  function to another variable
+
+var Sandeep = {
+    name: 'Sandeep Bobba',
+    age: 24,
+    job: 'Data Analyst'
+}
+
+var SandeepPresentation = shrikanth.presentation.bind(Sandeep);
+
+SandeepPresentation('kids', 'Evening');
+SandeepPresentation('Students', 'Morning');
+
 
 
 
