@@ -127,4 +127,85 @@ ramesh.withDrawl(10000);
 console.log(ramesh);
 
 
+// patterns
+n = 3;
+for (var i = 1; i < 4; i++) {
+    for (var j = 1; j <= i; j++) {
+        console.log('Ramesh');
 
+    }
+    console.log('\n');
+
+}
+
+
+// gmail login with email and password and forgot password
+
+var users = [
+    {
+        id: 101,
+        name: 'steve',
+        email: 'stevejobs@gmail.com',
+        password: 'jobs@apple',
+        phone: '9874563214',
+    },
+    {
+        id: 102,
+        name: 'jack',
+        email: 'jackdorsey@gmail.com',
+        password: 'dorsey@twitter',
+        phone: '9874563212',
+
+    },
+
+];
+
+var login = function (email, password) {
+
+    for (var i = 0; i < users.length; i++) {
+        result = {};
+        if (email === users[i].email && password === users[i].password) {
+            console.log('yes');
+            result = users[i];
+
+            break;
+        }
+        else {
+            console.log('user not exists')
+        }
+    }
+    return result;
+
+}
+
+var sendOtp = function (id, phone) {
+    otp = 
+}
+
+var forgotPassword = function (email) {
+    for (var i = 0; i < users.length; i++) {
+        if (email === users[i].email) {
+            // console.log('email exists', users[i]);
+            var phone = prompt('Enter your phone number which ends with', users[i].phone.slice(6, 10));
+            if (phone === users[i].phone) {
+                console.log('Thank you for verifying phone number,OTP has been sent to you');
+                sendOtp(users[i].id, phone);
+
+            }
+
+        }
+        else {
+            console.log('not exists');
+
+        }
+    }
+
+}
+
+var userprofile = login('stevejobs@gmail.com', 'jobs@apple');
+console.log('welcome to Facebook', userprofile.name);
+console.log('Login successful');
+console.log(userprofile);
+
+
+forgotPassword('jackdorsey@gmail.com');

@@ -387,38 +387,264 @@
 
 // // OBJECTS - 
 
-// // var objectname = {
-// //     key : value,
-// //     key : value,
-// // }
 
 // var student1_name = 'Ramesh';
 // var student1_no = 101;
 // var student1_class = 2;
 
+
+// var student2_name = 'Sandeep';
+// var student2_no = 102;
+// var student2_class = 3;
+
 // // Array
 
-// var student_details = ['Ramesh', 101, 2];
-
-// // object
-
-// var student1_details = {
-//     'name': 'Ramesh',
-//     'id': 101,
-//     'classroom': 2
-// };
-
-// var rahul123 = {
-//     'username': 'Rahul',
-//     'age': 22,
-//     'phone': 546546546545
-// };
+var student1_details = ['Ramesh', 101, 2];
+// var student2_details = ['Sandeep', 101, 3];
+// console.log(student1_details[1]);
 
 
 
-// console.log(student1_details);
+// object
+
+// var objectname = {
+//     key: value,
+//     key: value,
+// }
+
+
+var student1_details = {
+    'name': 'Ramesh',
+    'id': 101,
+    'classroom': 2
+};
+
+var student2_details = {
+    'username': 'Rahul',
+    'age': 22,
+    'phone': 546546546545
+};
+
+console.log(student2_details.username);
+
+
+// console.log(student1_details.name);
 
 // console.log(rahul123);
+
+
+student1_details.name = "Shrikanth";
+student1_details['id'] = 103;
+console.log(student1_details.id);
+
+
+
+// objects & arrays or array in objects
+
+var party = {
+    'softdrink': ['thumbsup', 'pepsi'],
+    'starters': ['chicken thandoori', 'lollipop'],
+    'biryani': ['veg biryani', 'chicken biryani', 'prawn biryani'],
+    'curry': ['chicken 65', 'paneer butter masala']
+}
+
+console.log(typeof (party));  // object
+console.log(typeof (party.softdrink)); // array
+console.log(party.softdrink[1]); // array
+console.log(party.biryani[1]);
+console.log(party.curry[1]);
+
+
+// object in objects
+
+
+var fbdatabase = {
+    'ram': {
+        'username': 'ramesh',
+        'email': 'ramesh@gmail.com'
+    },
+    'rah': {
+        'username': 'rahul',
+        'email': 'rahul@gmail.com'
+    },
+    '103': {
+        'username': 'shrikanth',
+        'email': 'shri@gmail.com'
+    },
+
+    '104': {
+        'username': 'sandeep',
+        'email': 'sandeep@gmail.com'
+    },
+}
+
+console.log(typeof (fbdatabase.ram));
+console.log(fbdatabase['104'].email);
+
+// var quiz = {
+//     'question1': {
+//         'question': 'color of sky',
+//         '1': 'blue',
+//         '2': 'green',
+//         '3': 'red'
+//     },
+//     'president of usa': {
+//         '1': 'donald',
+//         '2': 'barack',
+//         '3': 'george'
+//     }
+// }
+
+
+// var answers = {
+//     '1': 'blue',
+//     '2': 'donald',
+// }
+
+// console.log(quiz.question1);
+
+
+// console.log(quiz.question1.question + '?');
+
+// answer = prompt('Enter your option ' + quiz.question1['1'] + ' ' + quiz.question1['2'] + ' ' + quiz.question1['3'])
+// console.log('your option is', answer);
+// console.log(typeof (answer));
+
+// if (quiz.question1[answer] === answers[1]) {
+//     console.log('your answer is correct');
+
+// }
+// else {
+//     console.log('incorrect');
+
+// }
+
+// quiz game
+
+// console.log('welcome to the quiz app');
+
+
+// var questions = {
+//     '1': 'color of sky ?',
+//     '2': 'president of usa ?'
+// }
+
+// var choices = {
+//     '1': {
+//         '1': 'red',
+//         '2': 'blue',
+//         '3': 'green',
+//     },
+//     '2': {
+//         '1': 'donald',
+//         '2': 'barack obama',
+//         '3': 'george',
+//     }
+
+
+// }
+
+// var answers = {
+//     '1': 'blue',
+//     '2': 'donald',
+// }
+
+
+// console.log(questions['1']);
+// console.log(choices['1']);
+
+// selected_option = prompt('Enter your option ')
+// console.log(typeof (selected_option));
+
+// if (choices['1'][selected_option] === answers['1']) {
+//     console.log('your answer is correct');
+
+// }
+// else {
+//     console.log('incorrect');
+
+// }
+
+
+
+
+console.log('welcome to the quiz app');
+
+var score = 0;
+var questionNumber = 1;
+
+var questions = {
+    '1': 'color of sky ?',
+    '2': 'president of usa ?'
+}
+
+var choices = {
+    '1': {
+        '1': 'red',
+        '2': 'blue',
+        '3': 'green',
+    },
+    '2': {
+        '1': 'donald',
+        '2': 'barack obama',
+        '3': 'george',
+    }
+
+
+}
+
+var answers = {
+    '1': 'blue',
+    '2': 'donald',
+}
+// console.log(questions[questionNumber]);
+
+console.log('no of questions are : ', Object.keys(questions).length);
+
+
+
+
+while (true) {
+
+    console.log(questions[questionNumber]);
+    console.log(choices[questionNumber]);
+
+    selected_option = prompt('Enter your option ')
+    console.log(typeof (selected_option));
+
+    if (choices[questionNumber][selected_option] === answers[questionNumber]) {
+        score = score + 1;
+        questionNumber = questionNumber + 1;
+
+    }
+    else {
+        questionNumber = questionNumber + 1;
+    }
+
+    if (questionNumber > Object.keys(questions).length) {
+        break;
+    }
+
+
+}
+
+console.log('You got ', score);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // FUNCTION -A PIECE OF CODE WHERE WE CAN USE IT MULTIPLE TIMES INSTEAD OF REPEATING THE CODE
 
@@ -838,7 +1064,8 @@ es5scope();
 
 // CLOSURE DEF
 
-// inner function will always  have access to variables and parameters of the outer function evern after 
+// inner function will always  have access to variables and parameters of the outer function.
+//  evern after 
 // the outer function returned.
 
 // find years remain to retirement
@@ -928,6 +1155,7 @@ var SandeepPresentation = shrikanth.presentation.bind(Sandeep);
 
 SandeepPresentation('kids', 'Evening');
 SandeepPresentation('Students', 'Morning');
+
 
 
 
