@@ -968,6 +968,27 @@ console.log(jimmy);
 // console.log(student1);
 
 
+// // passing object to the functions as arguments
+var ramesh = {
+    name: 'ramesh',
+    city: 'USA',
+    age: 22,
+    frinds_list: ['rahul', 'shrikanth'],
+    maritial_status: 'yes',
+}
+
+function change_user_Details(user_object) {
+    console.log('details before chnaging', user_object);
+    user_object.name = 'ramesh boppan';
+    user_object.maritial_status = 'no';
+    console.log('details after change', user_object);
+
+}
+
+change_user_Details(ramesh);
+console.log(ramesh);
+
+
 // FIRST CLASS FUNCTIONS
 // passing function as arguments to another function
 // program : based on yearofbirh
