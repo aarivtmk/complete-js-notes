@@ -968,30 +968,30 @@ console.log(jimmy);
 // console.log(student1);
 
 
-// // passing object to the functions as arguments
-var ramesh = {
-    name: 'ramesh',
-    city: 'USA',
-    age: 22,
-    frinds_list: ['rahul', 'shrikanth'],
-    maritial_status: 'yes',
-}
+// // // passing object to the functions as arguments
+// var ramesh = {
+//     name: 'ramesh',
+//     city: 'USA',
+//     age: 22,
+//     frinds_list: ['rahul', 'shrikanth'],
+//     maritial_status: 'yes',
+// }
 
-function change_user_Details(user_object) {
-    console.log('details before chnaging', user_object);
-    user_object.name = 'ramesh boppan';
-    user_object.maritial_status = 'no';
-    console.log('details after change', user_object);
+// function change_user_Details(user_object) {
+//     console.log('details before chnaging', user_object);
+//     user_object.name = 'ramesh boppan';
+//     user_object.maritial_status = 'no';
+//     console.log('details after change', user_object);
+// }
 
-}
-
-change_user_Details(ramesh);
-console.log(ramesh);
+// change_user_Details(ramesh);
+// console.log(ramesh);
 
 
 // FIRST CLASS FUNCTIONS
 // passing function as arguments to another function
 // program : based on yearofbirh
+
 
 var years = [1998, 2005, 1997, 1960];
 
@@ -1013,34 +1013,34 @@ console.log(calculate(years, calculateAge));
 // functions returning functions
 // interview program - ask questions based on the job.
 
-function interviewQuestion(job) {
-    if (job === 'designer') {
-        return function (name) {
-            console.log('hey ' + name + ', Define Design');
+// function interviewQuestion(job) {
+//     if (job === 'designer') {
+//         return function (name) {
+//             console.log('hey ' + name + ', Define Design');
 
-        }
-    }
+//         }
+//     }
 
-    else if (job === 'teacher') {
-        return function (name) {
-            console.log('hey ' + name + ' , Why do you want to teach?');
+//     else if (job === 'teacher') {
+//         return function (name) {
+//             console.log('hey ' + name + ' , Why do you want to teach?');
 
-        }
-    }
+//         }
+//     }
 
-    else if (job === 'software engineer') {
-        return function (name) {
-            console.log('hey ' + name + ' , How do you define primitives?');
+//     else if (job === 'software engineer') {
+//         return function (name) {
+//             console.log('hey ' + name + ' , How do you define primitives?');
 
-        }
-    }
-    else {
-        return function (name) {
-            console.log('hey ' + name + ', what do you do for living?');
+//         }
+//     }
+//     else {
+//         return function (name) {
+//             console.log('hey ' + name + ', what do you do for living?');
 
-        }
-    }
-}
+//         }
+//     }
+// }
 
 
 var teacherQuestion = interviewQuestion('teacher');
@@ -1165,6 +1165,14 @@ shrikanth.presentation.call(Rahul, 'kids', 'Afternoon');
 
 // with bind we cannot call method directly so we have to copy
 //  function to another variable
+function addition(a, b) {
+    console.log(a + b);
+
+}
+
+var myfun = addition;
+myfun(2, 6);
+
 
 var Sandeep = {
     name: 'Sandeep Bobba',
