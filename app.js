@@ -1187,16 +1187,52 @@ SandeepPresentation('Students', 'Morning');
 
 
 
+// BEHIND THE SCENES - JAVASCRIPT
+
+// FLOW OF EXCEUTION
+
+// JS CODE
+
+// GOOGLE V8 ENGINE
+//     PARSER
+//     ABSTRACT SYNTAX TREE 
+//     M/C CODE
+
+// CPU WILL EXECUTE THE MACHINE CODE
+
+
+// // HOW IT IS EXECUTING 
+
+// EXECUTIN CONTEXT - PLACE WHERE WE STORE VARIABLES
+// DEFAULT EC IS GLOBAL EC
+// GLOBAL EC  -  GLOBAL VARIABLES AND GLOBAL FUNCTIONS
+// EC ALSO CALLED AS GLOBAL OBJECT AS IT STORES VARIABLES AND FUNCTIONS
+// EG : A === Window.A
 
 
 
+eg:
+var name = 'john';
+function first() {
+    var a = 'hello';
+    second();
+    var x = a + name;
+}
 
+function second() {
 
+    var b = 'hi';
+    third();
+    var z = b + name;
+}
 
+function third() {
+    var c = 'hey';
+    var z = c + name;
+}
 
+first();
 
-
-
-
+// http://www.pythontutor.com/javascript.html
 
 

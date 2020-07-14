@@ -159,3 +159,8 @@ shrikanth.presentation.call(Rahul, 'students', 'Evening');
 
 // var myfun = addition;
 // myfun(2, 6);
+
+var a = 4#
+
+console.log(a);
+
